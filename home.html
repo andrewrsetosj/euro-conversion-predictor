@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <h1>Euro Conversion Rates to the Five Most Traded Currencies</h1> 
+        <p> {{ message }} </p>
+        <p>Choose the currency of interest to compare</p>
+        <form action="/action/comparecurrency" method="POST">
+            <table border = 0>
+                <th>ISO 4217 Code</th><td>Currency</td>
+                {% for key, value in currency.items() %}
+                <tr>
+                    <th style="text-align:left"><input type="radio" name="currency" id="{{  key  }}" value="{{ key }}"> {{key}} </input></th><td>{{value}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <p><input type="submit" value="Compare currencies"></p>
+        </form>
+    </body>
+</html>

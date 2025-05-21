@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted Conversion Rate</title>
+</head>
+<body>
+    <h1>Predicted Conversion Rate</h1>
+    <h2>Currency: {{ currency }}</h2>
+    <h2>MSE: {{ mse }}</h2>
+    <img src="{{ url_for('static', filename=plot_image) }}" alt="Predicted Conversion Rate">
+    <br>
+</body>
+<form action="/monthselection" method="POST">
+    <p>Go back to the month selection <input type="submit" value="Month selection"></p>
+</form>
+<form action="/goback" method="POST">
+    <p>Go back to the currency selection <input type="submit" value="Go back"></p>
+</form>
+</html>
